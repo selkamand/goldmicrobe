@@ -30,7 +30,7 @@ params {
     sampleid: String
 
     // Optional
-    outdir: Path = "micritescreen"
+    outdir: String = "micritescreen"
 
     // Configure bowtie2 preset, default to sensitive
     // Allowed: very-fast, fast, sensitive, very-sensitive
