@@ -23,5 +23,12 @@ process KRAKENUNIQ {
         --report ${sampleid}.krakenuniq.report.txt \
         --output ${sampleid}.kout.txt \
         ${r1} ${r2}
+
+        n=\$(grep -v "^#" "${sampleid}.krakenuniq.report.txt" | wc -l)
+
+        (( n > 0 )) || {
+            echo "Error: kraken report is empty after removing comments" >&2
+            exit 1
+        }
     """
 }
